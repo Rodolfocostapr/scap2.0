@@ -6,12 +6,12 @@ import java.lang.reflect.ParameterizedType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-public abstract class BaseDAO<PK extends Serializable, T> {
+public abstract class JPABaseDAO<PK extends Serializable, T> {
 	
 	private final Class<T> persistentClass;
 
 	@SuppressWarnings("unchecked")
-	public BaseDAO(){
+	public JPABaseDAO(){
 		this.persistentClass =(Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[1];
 	}
 

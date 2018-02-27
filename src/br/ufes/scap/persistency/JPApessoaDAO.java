@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 import br.ufes.scap.domain.Pessoa;
 
 @Repository("pessoaDAO")
-public class JPApessoaDAO extends BaseDAO<Integer, Pessoa> implements PessoaDAO {
+public class JPApessoaDAO extends JPABaseDAO<Integer, Pessoa> implements PessoaDAO {
 
 	@Override
 	public Pessoa buscaMatricula(String matricula) {
@@ -86,5 +86,12 @@ public class JPApessoaDAO extends BaseDAO<Integer, Pessoa> implements PessoaDAO 
 		}
 		return null;
 	}
+
+	@Override
+	public void salvar(Pessoa pessoa) {
+		persist(pessoa);
+	}
+	
+	
 
 }

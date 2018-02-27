@@ -30,7 +30,7 @@ public class AplPessoaImp implements AplPessoa {
 			novoProfessor.setMatricula(novoUsuario.getMatricula());
 			novoProfessor.setTipoPessoa("1");
 			novoProfessor.setPassword(novoUsuario.getPassword());
-			pessoaDAO.persist(novoProfessor);
+			pessoaDAO.salvar(novoProfessor);
 		} else {
 			Secretario novoSecretario = new Secretario();
 			novoSecretario.setNome(novoUsuario.getNome());
@@ -40,7 +40,7 @@ public class AplPessoaImp implements AplPessoa {
 			novoSecretario.setMatricula(novoUsuario.getMatricula());
 			novoSecretario.setTipoPessoa("2");
 			novoSecretario.setPassword(novoUsuario.getPassword());
-			pessoaDAO.persist(novoSecretario);
+			pessoaDAO.salvar(novoSecretario);
 		}
 	}
 
